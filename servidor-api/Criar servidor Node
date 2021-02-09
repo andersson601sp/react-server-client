@@ -1,0 +1,44 @@
+criar pasta entrar com terminal
+
+comando:
+npm init
+
+parametros importante
+packege name: qualquer nome
+description: qualquer coisa
+entry point: index.js
+license: ISC
+
+gerar dependencias:
+npm install express body-parser cors uuid --save
+express -> servidor para criar a api
+body-parser -> ajuda a converter os dados que vem do request
+cors -> gerenciamento entre a cominicao entre client-server
+uuid -> gera um hash id letrar com numero para identificar unico
+--save s-> salva as informações no package json
+
+criar um aquivo index.js e adicionar:
+const express = require('express');
+const body = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+const port = 3001;
+
+NOTA:
+Caso ocorra erro com uudi:
+Faça o seguinte para resolver o problema:
+
+1. exclua o arquivo package-lock.json
+2. exclua o diretório node_modules
+3. No arquivo package.json substitua as seguites linhas:
+
+"uuid": "^8.3.0",
+"uuid/v4": "^8.3.0"
+Por:
+
+"uuid": "^3.4.0"
+4. Execute npm install e depois node index.js para inicializar o servidor.
+
+
+
